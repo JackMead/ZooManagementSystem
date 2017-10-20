@@ -8,8 +8,15 @@ namespace Zoo.BusinessLogic.Models.Animals
 {
   public class Lion : Animal
   {
-    public Lion(DateTime dateOfBirth) : base(dateOfBirth)
-    {
+      private DateTime lastSweptOut;
+      public Lion(DateTime dateOfBirth) : base(dateOfBirth)
+      {
+
+      }
+
+      public void SweepOut()
+      {
+          lastSweptOut = DateTime.Now;
+      }
     }
-  }
 }

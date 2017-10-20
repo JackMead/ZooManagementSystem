@@ -8,9 +8,15 @@ namespace Zoo.BusinessLogic.Models.Animals
 {
     class Mammoth : Animal
     {
+        private DateTime lastSweptOut;
         public Mammoth(DateTime dateOfBirth) : base(dateOfBirth)
         {
-            
+
+        }
+
+        public void SweepOut()
+        {
+            lastSweptOut = DateTime.Now;
         }
     }
 }

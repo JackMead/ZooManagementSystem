@@ -34,16 +34,24 @@ namespace Zoo.ConsoleApp
                 new Keeper(otherAnimals)
             };
 
+
             var feedingScheduler = FeedingScheduler.Instance;
             var groomingScheduler = GroomingScheduler.Instance;
+
+            var schedulers = new IScheduler[]
+            {
+                feedingScheduler,
+                groomingScheduler
+            };
 
             while (true)
             {
                 Console.WriteLine("Feeding the animals...");
-                feedingScheduler.AssignFeedingJobs(keepers, animals);
-
                 Console.WriteLine("Grooming the animals...");
-                groomingScheduler.AssignGroomingJobs(keepers, animals);
+                foreach (var scheduler in schedulers)
+                {
+                    scheduler.AssignJobs(keepers);
+                }
 
                 Console.WriteLine("Done. Results:");
 

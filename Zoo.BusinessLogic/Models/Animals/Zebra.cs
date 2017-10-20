@@ -4,8 +4,15 @@ namespace Zoo.BusinessLogic.Models.Animals
 {
   public class Zebra : AnimalThatCanBeGroomed
   {
-    public Zebra(DateTime dateOfBirth) : base(dateOfBirth)
-    {
+      private DateTime lastSweptOut;
+      public Zebra(DateTime dateOfBirth) : base(dateOfBirth)
+      {
+
+      }
+
+      public void SweepOut()
+      {
+          lastSweptOut = DateTime.Now;
+      }
     }
-  }
 }

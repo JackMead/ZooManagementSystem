@@ -4,7 +4,7 @@ using Zoo.BusinessLogic.Models.Animals;
 
 namespace Zoo.BusinessLogic.Services
 {
-  public class GroomingScheduler
+  public class GroomingScheduler : IScheduler
   {
     private static GroomingScheduler instance;
 
@@ -25,7 +25,7 @@ namespace Zoo.BusinessLogic.Services
     {
     }
 
-    public void AssignGroomingJobs(IEnumerable<Keeper> keepers, IEnumerable<Animal> animals)
+    public void AssignJobs(IEnumerable<Keeper> keepers)
     {
       foreach (var keeper in keepers)
       {
